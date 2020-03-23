@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Podcast Mockup</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <div class="jumbotron">
-        <h1 class="display-7" style="text-indent: 9%;"><img src="/Media/NHLOGO.png" height="75" ></img> Surrey Hills Baptist Children Center Podcasts</h1>
-        <p class="lead" style="text-indent: 9%;">This is a test of the podcast website</p>
-    </div>
+  <form action="WOUpload.php" method="post" enctype="multipart/form-data">
+      Select Image File to Upload:
+      <input type="text" placeholder="Enter News Name" name="title" class="tb"/>
+      <input type="file" name="file">
+      <input type="submit" name="submit" value="Upload">
+    </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
