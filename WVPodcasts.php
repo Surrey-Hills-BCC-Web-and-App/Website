@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+  <div style="background-color:#7cbe31; color:#0d2d52">
     <?php
     include 'Pdb_connect.php';
 
@@ -38,7 +39,14 @@
     }else{ ?>
         <p>No Podcasts found...</p>
     <?php } ?>
-      
+    <script>
+      var frame = document.getElementById('news');
+        frame.onload = function () {
+          var body = frame.contentWindow.document.querySelector('body');
+          body.style.color = '#0d2d52';
+        };
+        </script>
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

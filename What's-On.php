@@ -34,30 +34,39 @@
             </ul>
         </div>
     </nav>
-    <?php
-    // Include the database configuration file
-    include 'WOdb_connect.php';
+    <div style="background-color:#0d2d52; color:#7cbe31">
+        <?php
+        // Include the database configuration file
+        include 'WOdb_connect.php';
 
-    // Get images from the database
-    $query = $db->query("SELECT * FROM WhatsOn ORDER BY uploaded_on DESC");
+        // Get images from the database
+        $query = $db->query("SELECT * FROM WhatsOn ORDER BY uploaded_on DESC");
 
-    if($query->num_rows > 0){
-        while($row = $query->fetch_assoc()){
-            $newsURL = "What's On/".$row["name"];
-            $title = $row["title"];
-            $time = $row["uploaded_on"];
-            $user = $row["user"];
-    ?>
-        <h1><?php echo $title; ?></h1>
-        <h6><?php echo $time; ?></h6>
-        <h7>Uploaded by: <?php echo $user; ?></h7>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="<?php echo $newsURL; ?>" allowfullscreen></iframe>
-        </div>
-    <?php }
-    }else{ ?>
-        <p>No News found...</p>
-    <?php } ?>
+        if($query->num_rows > 0){
+            while($row = $query->fetch_assoc()){
+                $newsURL = "What's On/".$row["name"];
+                $title = $row["title"];
+                $time = $row["uploaded_on"];
+                $user = $row["user"];
+        ?>
+            <h1><?php echo $title; ?></h1>
+            <h6><?php echo $time; ?></h6>
+            <h7>Uploaded by: <?php echo $user; ?></h7>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="news" class="embed-responsive-item" src="<?php echo $newsURL; ?>" allowfullscreen></iframe>
+            </div>
+        <?php }
+        }else{ ?>
+            <p>No News found...</p>
+        <?php } ?>
+        <script>
+        var frame = document.getElementById('news');
+            frame.onload = function () {
+                var body = frame.contentWindow.document.querySelector('body');
+                body.style.color = '#7cbe31';
+            };
+        </script>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
