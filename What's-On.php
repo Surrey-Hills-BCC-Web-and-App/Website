@@ -44,7 +44,7 @@
 
         if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
-                $newsURL = "What's On/".$row["name"];
+                $newsURL = "News/".$row["name"];
                 $title = $row["title"];
                 $time = $row["uploaded_on"];
                 $user = $row["user"];
